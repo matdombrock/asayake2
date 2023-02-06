@@ -41,6 +41,9 @@ asa._cfg = {
         footer: true,
     }
 };
+if(window.innerWidth < asa._cfg.width){
+    asa._cfg.width = window.innerWidth;
+}
 
 asa._playlist = [];
 
