@@ -1,5 +1,13 @@
 let asa = {};
 
+asa.svg = {};
+
+asa.svg.play = '<svg width=16 height=16 viewBox="0 0 32 32"><path d="m1.3843 1.0744v31.746l31.326-15.568z" fill="#fff"/></svg>';
+asa.svg.pause = '<svg width=16 height=16 viewBox="0 0 32 32"><g fill="#fff"><rect x="1.045" y="1.3139" width="9.3911" height="31.301"/><rect x="23.27" y="1.3139" width="9.3911" height="31.301"/></g></svg>';
+asa.svg.stop = '<svg width=16 height=16 viewBox="0 0 32 32"><rect x="1.0889" y="1.204" width="31.684" height="31.512" fill="#fff"/></svg>';
+asa.svg.rec = '<svg width=16 height=16 viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#fff"/></svg>';
+
+
 asa._state = {
     audio: {},
     playlistTitle: "Playlist Title",
@@ -16,7 +24,7 @@ asa._cfg = {
     colors:{
         bg: 'rgb(35,35,35)',
         btnBg: 'rgb(15,15,15)',
-        btnBgHover: 'rgb(25,25,25)',
+        btnBgHover: 'rgb(35,35,35)',
         border: 'rgb(155,155,155)',
         font: 'rgb(200,200,200)',
         timelineBg: 'rgb(100,100,100)',
@@ -87,13 +95,20 @@ asa._buildPlayer = function buildPlayer(){
     asa._style = document.createElement('style');
     asa._style.type = 'text/css';
     asa._style.innerHTML = `
-        button{
+        .btn{
+            display:inline-block;
             cursor:pointer;
             background:${asa._cfg.colors.btnBg};
             color:${asa._cfg.colors.font};
             border:none;
+            width:24px;
+            height:16px;
+            text-align:center;
         }
-        button:hover{
+        .btn svg{
+            
+        }
+        .btn:hover{
             background:${asa._cfg.colors.btnBgHover};
         }
         #asayake{
@@ -223,21 +238,24 @@ asa._buildPlayer = function buildPlayer(){
 
     
 
-    asa._playBtn = document.createElement('button');
+    asa._playBtn = document.createElement('div');
     asa._playBtn.setAttribute('id', 'asayake-pause-play');
-    asa._playBtn.innerHTML = '⏵';
+    asa._playBtn.className = 'btn';
+    asa._playBtn.innerHTML = asa.svg.play;
     asa._playBtn.addEventListener('click', asa._play);
     asa._player.appendChild(asa._playBtn);
 
-    asa._stopBtn = document.createElement('button');
+    asa._stopBtn = document.createElement('div');
     asa._stopBtn.setAttribute('id', 'asayake-stop');
-    asa._stopBtn.innerHTML = '⏹';
+    asa._stopBtn.className = 'btn';
+    asa._stopBtn.innerHTML = asa.svg.stop;
     asa._stopBtn.addEventListener('click', asa._stopNow);
     asa._player.appendChild(asa._stopBtn);
 
-    asa._recBtn = document.createElement('button');
+    asa._recBtn = document.createElement('div');
     asa._recBtn.setAttribute('id', 'asayake-rec');
-    asa._recBtn.innerHTML = '⏺';
+    asa._recBtn.className = 'btn';
+    asa._recBtn.innerHTML = asa.svg.rec;
     asa._recBtn.addEventListener('click', asa._rec);
     asa._player.appendChild(asa._recBtn);
 
@@ -310,7 +328,7 @@ asa._fadeOut = function fadeOut(stop=false){
 }
 
 asa._updatePlayBtn = function updatePlayBtn(){
-    asa._playBtn.innerHTML = asa._state.playing ? '⏸' : '⏵';
+    asa._playBtn.innerHTML = asa._state.playing ? asa.svg.pause : asa.svg.play;
 }
 
 asa._play = function play(override = false){
@@ -349,7 +367,7 @@ asa._rec = function rec(){
         asa._recBtn.style.background = "rgb(255,0,0)";
     }
     else{
-        asa._recBtn.style.background = "gainsboro";
+        asa._recBtn.style.background = asa._cfg.colors.btnBg;
     }
 }
 
