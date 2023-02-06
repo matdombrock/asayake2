@@ -47,7 +47,10 @@ albumArt: 'Album Art URL',
 url: 'Audio File URL'
 ```
 
-*Note: Each property is a string type. Omitting any of these properties is an error.*
+**Notes:** 
+- Each property is a string type. 
+- Omitting any of these properties is an error.
+- There is no min/max image size but images should be uniform
 
 ---
 
