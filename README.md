@@ -140,3 +140,11 @@ Hides the album art. Must be run before `init()`.
 ```js
 asa.hideAlbumArt();
 ```
+
+## `hideAlbumFooter()`
+Hides the footer. Must be run before `init()`.
+
+### Example:
+```js
+asa.hideFooter();
+```

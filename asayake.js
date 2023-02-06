@@ -38,6 +38,7 @@ asa._cfg = {
     show:{
         title: true,
         albumArt: true,
+        footer: true,
     }
 };
 
@@ -81,6 +82,10 @@ asa.hideTitle = function hideTitle(){
 
 asa.hideAlbumArt = function hideAlbumArt(){
     asa._cfg.show.albumArt = false;
+}
+
+asa.hideFooter = function hideFooter(){
+    asa._cfg.show.footer = false;
 }
 
 asa._buildPlayer = function buildPlayer(){
@@ -195,6 +200,18 @@ asa._buildPlayer = function buildPlayer(){
             background:${asa._cfg.colors.playlistItemActive}!important;
             font-weight:bolder;
         }
+        .footer{
+            text-align:right;
+            font-size:0.75rem;
+        }
+        .footer a{
+            color: ${asa._cfg.colors.font};
+            text-decoration:none;
+            opacity:0.5;
+        }
+        .footer a:hover{
+            opacity:1;
+        }
     `;
     asa._rootElement.appendChild(asa._style);
 
@@ -235,8 +252,6 @@ asa._buildPlayer = function buildPlayer(){
     asa._timelinePlayHead.className = 'timeline-playhead';
     asa._timeline.appendChild(asa._timelinePlayHead);
     asa._player.appendChild(asa._timeline);
-
-    
 
     asa._playBtn = document.createElement('div');
     asa._playBtn.setAttribute('id', 'asayake-pause-play');
@@ -283,12 +298,20 @@ asa._buildPlayer = function buildPlayer(){
     }
     asa._player.appendChild(asa._playlistArea);
 
+    asa._footer = document.createElement('div');
+    asa._footer.className = 'footer';
+    asa._footer.innerHTML = '<a href="https://github.com/matdombrock/asayake2" target="_blank">Asayake Player GPL3</a>';
+    asa._player.appendChild(asa._footer);
+
     // Optional hides
     if(asa._cfg.show.title === false){
         asa._playlistTitle.style.display = 'none';
     }
     if(asa._cfg.show.albumArt === false){
         asa._albumImgArea.style.display = 'none';
+    }
+    if(asa._cfg.show.footer === false){
+        asa._footer.style.display = 'none';
     }
 
 };
