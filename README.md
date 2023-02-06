@@ -93,16 +93,16 @@ Sets a given theme color. Must be run before `init()`.
 Available colors (and defaults):
 
 ```js
-background: 'rgb(35,35,35)',
-btnBackground: 'rgb(15,15,15)',
-btnBackgroundHover: 'rgb(25,25,25)',
-borderColor: 'rgb(155,155,155)',
-fontColor: 'rgb(200,200,200)',
-timelineBackground: 'rgb(100,100,100)',
+bg: 'rgb(35,35,35)',
+btnBg: 'rgb(15,15,15)',
+btnBgHover: 'rgb(25,25,25)',
+border: 'rgb(155,155,155)',
+font: 'rgb(200,200,200)',
+timelineBg: 'rgb(100,100,100)',
 timelineInner: 'rgb(155,155,155)',
 playhead: 'rgb(200,200,200)',
-playlistItemBackground: 'rgb(45,45,45)',
-playlistItemBackground2: 'rgb(65,65,65)',
+playlistItemBg: 'rgb(45,45,45)',
+playlistItemBg2: 'rgb(65,65,65)',
 playlistItemHover:'rgb(75,75,75)',
 playlistItemActive:'rgb(100,100,100)',
 ```

@@ -14,16 +14,16 @@ asa._cfg = {
     fadeTime: 5,
     width:512,
     colors:{
-        background: 'rgb(35,35,35)',
-        btnBackground: 'rgb(15,15,15)',
-        btnBackgroundHover: 'rgb(25,25,25)',
-        borderColor: 'rgb(155,155,155)',
-        fontColor: 'rgb(200,200,200)',
-        timelineBackground: 'rgb(100,100,100)',
+        bg: 'rgb(35,35,35)',
+        btnBg: 'rgb(15,15,15)',
+        btnBgHover: 'rgb(25,25,25)',
+        border: 'rgb(155,155,155)',
+        font: 'rgb(200,200,200)',
+        timelineBg: 'rgb(100,100,100)',
         timelineInner: 'rgb(155,155,155)',
         playhead: 'rgb(200,200,200)',
-        playlistItemBackground: 'rgb(45,45,45)',
-        playlistItemBackground2: 'rgb(65,65,65)',
+        playlistItemBg: 'rgb(45,45,45)',
+        playlistItemBg2: 'rgb(65,65,65)',
         playlistItemHover:'rgb(75,75,75)',
         playlistItemActive:'rgb(100,100,100)',
     },
@@ -89,21 +89,22 @@ asa._buildPlayer = function buildPlayer(){
     asa._style.innerHTML = `
         button{
             cursor:pointer;
-            background:${asa._cfg.colors.btnBackground};
-            color:white;
+            background:${asa._cfg.colors.btnBg};
+            color:${asa._cfg.colors.font};
+            border:none;
         }
         button:hover{
-            background:${asa._cfg.colors.btnBackgroundHover};
+            background:${asa._cfg.colors.btnBgHover};
         }
         #asayake{
             font-family: 'Trebuchet MS', sans-serif;
             width:${asa._cfg.width}px;
             margin:0 auto;
-            border:1px solid ${asa._cfg.colors.borderColor};
+            border:1px solid ${asa._cfg.border};
             padding:1rem;
             border-radius:0.25rem;
-            background:${asa._cfg.colors.background};
-            color:${asa._cfg.colors.fontColor};
+            background:${asa._cfg.colors.bg};
+            color:${asa._cfg.colors.font};
             overflow:hidden;
         }
         .playlist-title{
@@ -120,7 +121,7 @@ asa._buildPlayer = function buildPlayer(){
             margin:0 auto;
         }
         .timeline{
-            background:${asa._cfg.colors.timelineBackground};
+            background:${asa._cfg.colors.timelineBg};
             width:${asa._cfg.width}px;
             height:24px;
             border-radius:0.25rem;
@@ -164,13 +165,13 @@ asa._buildPlayer = function buildPlayer(){
         .playlist-item{
             padding:0.25rem;
             cursor:pointer;
-            background:${asa._cfg.colors.playlistItemBackground};
+            background:${asa._cfg.colors.playlistItemBg};
             max-height:1.5rem;
             line-height:1.5rem;
             overflow:hidden;
         }
         .playlist-item:nth-child(even){
-            background:${asa._cfg.colors.playlistItemBackground2};
+            background:${asa._cfg.colors.playlistItemBg2};
         }
         .playlist-item:hover{
             background:${asa._cfg.colors.playlistItemHover};

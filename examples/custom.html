@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Asayake Example</title>
+  </head>
+  <body>
+	<div id="asayake"></div>
+    <style>
+        html{
+            background:rgb(15, 15, 15);
+        }
+    </style>
+    
+    <script src="../asayake.js"></script>
+
+    <script>
+        const playlist = [
+            {
+                artist:'TGOW',
+                albumName: 'Misc. Hits',
+                trackName: 'Track 1',
+                albumArt: 'albumArt/art1.jpg',
+                url: 'music/track1.mp3'
+            },
+            {
+                artist:'TGOW',
+                albumName: 'Misc. Hits',
+                trackName: 'Track 2',
+                albumArt: 'albumArt/art2.png',
+                url: 'music/track2.mp3'
+            },
+            {
+                artist:'TGOW',
+                albumName: 'Misc. Hits',
+                trackName: 'Track 3',
+                albumArt: 'albumArt/art3.JPG',
+                url: 'music/track3.mp3'
+            },
+            {
+                artist:'TGOW',
+                albumName: 'Misc. Hits, but this is actually a super long name instead to check overflow',
+                trackName: 'Track 4',
+                albumArt: 'albumArt/art4.jpg',
+                url: 'music/track4.mp3'
+            },
+        ];
+        asa.hideTitle();
+        asa.setColor('bg', 'rgb(200,200,200)');
+        asa.setColor('btnBg', 'rgb(155,155,155)');
+        asa.setColor('btnBgHover', 'rgb(200,200,200)');
+        asa.setColor('border', 'rgb(255,200,200)');
+        asa.setColor('font', 'rgb(22,22,22)');
+        asa.setColor('timelineBg', 'rgb(100,100,100)');
+        asa.setColor('timelineInner', 'rgb(175,175,275)');
+        asa.setColor('playhead', 'rgb(255,100,100)');
+        asa.setColor('playlistItemBg', 'rgb(122,122,122)');
+        asa.setColor('playlistItemBg2', 'rgb(152,152,152)');
+        asa.setColor('playlistItemHover', 'rgb(222,122,122)');
+        asa.setColor('playlistItemActive', 'rgb(200,122,122)');
+        
+        asa.setColor('b', 'rgb(200,200,200)');
+        asa.init(playlist, 'Custom Playlist');
+    </script>
+  </body>
+</html>
+
+
+
+
