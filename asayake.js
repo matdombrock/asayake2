@@ -43,6 +43,7 @@ asa._cfg = {
 };
 if(window.innerWidth < asa._cfg.width){
     asa._cfg.width = window.innerWidth;
+    console.log('Set Width to: '+window.innerWidth);
 }
 
 asa._playlist = [];
@@ -121,7 +122,7 @@ asa._buildPlayer = function buildPlayer(){
         }
         #asayake{
             font-family: 'Trebuchet MS', sans-serif;
-            width:${asa._cfg.width}px;
+            width:calc(${asa._cfg.width}px - 2rem);
             margin:0 auto;
             border:1px solid ${asa._cfg.border};
             padding:1rem;
@@ -145,7 +146,7 @@ asa._buildPlayer = function buildPlayer(){
         }
         .timeline{
             background:${asa._cfg.colors.timelineBg};
-            width:${asa._cfg.width}px;
+            width:calc(${asa._cfg.width}px - 2rem);
             height:24px;
             border-radius:0.25rem;
             margin-bottom:0.25rem;
