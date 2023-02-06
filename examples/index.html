@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Asayake Example</title>
+  </head>
+  <body>
+	<div id="asayake"></div>
+    <style>
+        html{
+            background:rgb(15, 15, 15);
+        }
+    </style>
+    
+    <script src="../asayake.js"></script>
+
+    <script>
+        const playlist = [
+            {
+                artist:'TGOW',
+                albumName: 'Misc. Hits',
+                trackName: 'Track 1',
+                albumArt: 'albumArt/art1.jpg',
+                url: 'music/track1.mp3'
+            },
+            {
+                artist:'TGOW',
+                albumName: 'Misc. Hits',
+                trackName: 'Track 2',
+                albumArt: 'albumArt/art2.png',
+                url: 'music/track2.mp3'
+            },
+            {
+                artist:'TGOW',
+                albumName: 'Misc. Hits',
+                trackName: 'Track 3',
+                albumArt: 'albumArt/art3.JPG',
+                url: 'music/track3.mp3'
+            },
+            {
+                artist:'TGOW',
+                albumName: 'Misc. Hits, but this is actually a super long name instead to check overflow',
+                trackName: 'Track 4',
+                albumArt: 'albumArt/art4.jpg',
+                url: 'music/track4.mp3'
+            },
+        ];
+        asa.init(playlist, 'Custom Playlist');
+    </script>
+  </body>
+</html>
+
+
+
+
